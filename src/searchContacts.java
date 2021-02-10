@@ -15,13 +15,17 @@ public class searchContacts {
         String nameSearch=searchContacts.nextLine();
         Path contactPath = Paths.get("contactList.txt");
         List<String> contactList = Files.readAllLines(contactPath);
-        int linecount= 0;
         String line;
         boolean noMatches = true;
         System.out.println(contactList);
-        if (contactList.contains(nameSearch)){
-            System.out.println("found");
+        for (int linecount = 0; linecount < contactList.size(); linecount++){
+            if(contactList.get(linecount).contains(nameSearch)){
+                System.out.println(contactList.get(linecount));
+            }
         }
+//        if (contactList.contains(nameSearch)){
+//            System.out.println("found");
+//        }
 //        while ((line = searchContacts.nextLine()) != null) {
 //            if(Arrays.asList(contactPath).contains(nameSearch)){
 //                System.out.println(Arrays.asList(contactPath));
