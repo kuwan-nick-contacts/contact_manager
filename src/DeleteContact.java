@@ -22,7 +22,7 @@ public class DeleteContact {
 
         for (String line : lines) {
             if (line.contains(delete)) {
-                newList.add(" ");
+                newList.add("");
                 continue;
             }
             newList.add(line);

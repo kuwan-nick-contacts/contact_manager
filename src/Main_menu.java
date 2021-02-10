@@ -16,8 +16,17 @@ public class Main_menu {
             System.out.println("invalid selection");
             main(args);
         }else if(menuOption==1){
-//            return viewContacts()
-        }
+            public viewContacts viewContacts;
+            viewContacts = new viewContacts();
+        }else if(menuOption==2){
+        new addContact();
+    }else if(menuOption==3){
+        new searchContacts();
+        }else if(menuOption==4){
+            new DeleteContact();
+        }else  if (menuOption==5){
+        System.exit(0);
+    }
 
 //1. View contacts.
 //2. Add a new contact.
