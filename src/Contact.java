@@ -10,6 +10,10 @@ public class Contact {
         this.phoneNumber = phoneNumber;
     }
 
+    public Contact() {
+
+    }
+
     public String toString() {
         return firstName + ", " + lastName + ", " + phoneNumber;
     }

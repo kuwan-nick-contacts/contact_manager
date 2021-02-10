@@ -9,13 +9,14 @@ public class searchContacts {
 
 
     public static void main(String[] args) throws IOException {
-        Scanner searchContacts= new Scanner(System.in);
+        Scanner searchContacts= new Scanner("contactList.txt");
         System.out.println("Enter a name to search");
         String nameSearch=searchContacts.nextLine();
         Path contactPath = Paths.get("contactList.txt");
         List<String> contactList = Files.readAllLines(contactPath);
         for (int i = 0; i < contactList.size(); i += 1) {
             if(nameSearch==)
+
             System.out.println((i + 1) + ": " + contactList.get(i));
     }
 //
