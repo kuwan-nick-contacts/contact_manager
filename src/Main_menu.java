@@ -3,6 +3,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -42,6 +43,7 @@ public class Main_menu  {
         }else if(menuOption==1){
 
              viewContacts();
+             main(args);
         }else if(menuOption==2){
             String firstName;
             String lastName;
@@ -62,7 +64,7 @@ public class Main_menu  {
             );
             Files.write(filePath,contact , StandardOpenOption.APPEND);
 
-
+            main(args);
         }else if(menuOption==3){
             Scanner searchContacts= new Scanner(System.in);
             System.out.println("Enter a name to search");
@@ -76,8 +78,25 @@ public class Main_menu  {
                     System.out.println(contactList.get(linecount));
                 }
             }
+            main(args);
         }else if(menuOption==4){
-            new DeleteContact();
+            Scanner deleteScanner = new Scanner(System.in);
+            System.out.println("enter contact to delete");
+            String delete = deleteScanner.nextLine();
+
+            List<String> lines = Files.readAllLines(Paths.get( "contactList.txt"));
+            List<String> newList = new ArrayList<>();
+
+            for (String line : lines) {
+                if (line.contains(delete)) {
+                    newList.remove(delete);
+                    continue;
+                }
+                newList.add(line);
+            }
+            Files.write(Paths.get("contactList.txt"), newList);
+            System.out.println("Here is new contact list "+ newList);
+            main(args);
         }else  if (menuOption==5){
         System.exit(0);
     }
