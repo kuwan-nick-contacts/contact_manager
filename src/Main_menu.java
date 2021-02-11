@@ -64,7 +64,18 @@ public class Main_menu  {
 
 
         }else if(menuOption==3){
-        new searchContacts();
+            Scanner searchContacts= new Scanner(System.in);
+            System.out.println("Enter a name to search");
+            String nameSearch=searchContacts.nextLine();
+            Path contactPath = Paths.get("contactList.txt");
+            List<String> contactList = Files.readAllLines(contactPath);
+            String line;
+            boolean noMatches = true;
+            for (int linecount = 0; linecount < contactList.size(); linecount++){
+                if(contactList.get(linecount).contains(nameSearch)){
+                    System.out.println(contactList.get(linecount));
+                }
+            }
         }else if(menuOption==4){
             new DeleteContact();
         }else  if (menuOption==5){
