@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main_menu {
+public class Main_menu extends viewContacts {
 
     public static void main(String[] args) {
         System.out.println("What would you like to do?\n" +
@@ -16,7 +16,7 @@ public class Main_menu {
             System.out.println("invalid selection");
             main(args);
         }else if(menuOption==1){
-            public viewContacts viewContacts;
+            viewContacts viewContacts;
             viewContacts = new viewContacts();
         }else if(menuOption==2){
         new addContact();
